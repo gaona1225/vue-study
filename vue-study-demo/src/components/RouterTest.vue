@@ -3,17 +3,15 @@
 </template>
 
 <script>
-    export default {
-        name: 'RouterTest',
-        data () {
-            return {
-
-            }
-        },
-        methods: {
-            
-        }
+export default {
+  name: 'RouterTest',
+  data () {
+    return {
     }
+  },
+  methods: {
+  }
+}
 </script>
 
 <style scoped>

@@ -5,20 +5,17 @@
     </li>
 </template>
 
-
 <script>
-    export default {
-        name: 'todoItem',
-        props: ['title'],
-        components: {
-
-        },
-        data () {
-            return {
-            }
-        },
-        methods: {
-            
-        }
+export default {
+  name: 'todoItem',
+  props: ['title'],
+  components: {
+  },
+  data () {
+    return {
     }
+  },
+  methods: {
+  }
+}
 </script>

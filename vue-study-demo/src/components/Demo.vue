@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import Modal from './Modal';
-import vueButton from './Button';
+import Modal from './Modal'
+import vueButton from './Button'
 export default {
   name: 'Demo',
   components: {
@@ -57,15 +57,15 @@ export default {
   },
   data () {
     return {
-        isModalVisible: false
+      isModalVisible: false
     }
   },
   methods: {
     showModal: function () {
-      this.isModalVisible = true;
+      this.isModalVisible = true
     },
     closeModal: function () {
-      this.isModalVisible = false;
+      this.isModalVisible = false
     }
   }
 }

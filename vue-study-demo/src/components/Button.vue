@@ -5,58 +5,55 @@
 </template>
 
 <script>
-    export default {
-        name: 'Button',
-        props: {
-            btnText: {
-                type: String,
-                default: ''
-            },
-            btnType: {
-                type: String,
-                default: ''
-            },
-            btnSize: {
-                type: String,
-                default: ''
-            },
-            btnOutline: {
-                type: String,
-                default: ''
-            },
-            btnActive: {
-                
-            },
-            btnBlock: {
-                
-            }
-        },
-        computed: {
-            computedType: function () {
-                return this.btnType ? `btn-${this.btnType}` : ''
-            },
-            computedSize: function () {
-                return this.btnSize ? `btn-${this.btnSize}` : ''
-            },
-            computedOutline: function () {
-                return this.btnOutline ? `btn-outline-${this.btnOutline}` : ''
-            },
-            computedActive: function () {
-                return this.btnActive === 'true' ? 'active' : ''
-            },
-            computedBlock: function () {
-                return this.btnBlock === 'true' ? 'btn-block' : ''
-            }
-        },
-        data () {
-            return {
-
-            }
-        },
-        methods: {
-            
-        }
+export default {
+  name: 'Button',
+  props: {
+    btnText: {
+      type: String,
+      default: ''
+    },
+    btnType: {
+      type: String,
+      default: ''
+    },
+    btnSize: {
+      type: String,
+      default: ''
+    },
+    btnOutline: {
+      type: String,
+      default: ''
+    },
+    btnActive: {
+    },
+    btnBlock: {
     }
+  },
+  computed: {
+    computedType: function () {
+      return this.btnType ? `btn-${this.btnType}` : ''
+    },
+    computedSize: function () {
+      return this.btnSize ? `btn-${this.btnSize}` : ''
+    },
+    computedOutline: function () {
+      return this.btnOutline ? `btn-outline-${this.btnOutline}` : ''
+    },
+    computedActive: function () {
+      return this.btnActive === 'true' ? 'active' : ''
+    },
+    computedBlock: function () {
+      return this.btnBlock === 'true' ? 'btn-block' : ''
+    }
+  },
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+  }
+}
 </script>
 
 <style scoped>

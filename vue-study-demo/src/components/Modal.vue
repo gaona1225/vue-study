@@ -14,7 +14,6 @@
                         这是Modal弹框的主体
                     </slot>
                 </div>
-                
                 <div class="modal-footer">
                     <slot name="footer">
                         这是Modal弹框的脚部
@@ -27,20 +26,20 @@
 </template>
 
 <script>
-    export default {
-        name: 'Modal',
-        props: ['show'],
-        data () {
-            return {
+export default {
+  name: 'Modal',
+  props: ['show'],
+  data () {
+    return {
 
-            }
-        },
-        methods: {
-            close: function () {
-                this.$emit('close')
-            }
-        }
     }
+  },
+  methods: {
+    close: function () {
+      this.$emit('close')
+    }
+  }
+}
 </script>
 
 <style scoped>
