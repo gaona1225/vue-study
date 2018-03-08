@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vueTest</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+
+
+<body>
+<templete>
+    <div id="app">
+        <p class="cName1" v-bind:class = "classNameObj">
+        {{ message }}
+        </p>
+        <input type = "text" v-model="message"/>
+        <ul>
+            <!--<li v-for = "elem in ulList">{{elem}}</li>-->
+            <li v-for = "(elem, index) of ulList">{{index}}：{{elem}}</li>
+        </ul>
+        <button @click = "addList" v-bind:disabled = "isButtonDisabled">addList</button>
+        <p>初始数据str: {{str}}</p>
+        <p>翻转后的数据str: {{reversedStr}}</p>
+        <p>Hello {{fullName}}</p>
+        <p v-bind:style="{display: ['-webkit-box', '-ms-flexbox', 'flex']}">
+            问一个答案是 yes/no 的问题：
+            <input v-model = "question"/>
+        </p>
+        <p>{{answer}}</p>
+        <h1 v-if = "ok">Yes</h1>
+        <h1 v-else>No</h1>
+
+        <div>
+            <span v-if = "type === 'A'">A</span>
+            <span v-else-if = "type === 'B'">B</span>
+            <span v-else-if = "type === 'C'">C</span>
+            <span v-else>!A&&!B&&!C</span>
+        </div>
+
+        <div v-if = "loginType === 'username'">
+            <label>用户名</label>
+            <input placeholder="请输入用户名" key = "username-input">
+        </div>
+        <div v-else>
+            <label>邮箱</label>
+            <input placeholder="请输入邮箱" key = "email">
+        </div>
+        <button @click="changeLoginType">切换登录类型</button>
+
+        <ul>
+            <li v-for = "n in evenNumbers">{{n}}</li>
+        </ul>
+
+        <div>
+            <!--<span v-for = "n in 5" v-if = "n === 3">{{n}}</span>-->
+            <span v-for = "n in 5">{{n}}</span>
+        </div>
+
+        <template v-for = "m in 3">{{m}}</template>
+
+    </div>
+</templete>
+<script type="text/javascript">
+    // var vm = new Vue({ // 如果要全局控制vue实例配置可以将vue实例赋给变量，然后通过 vm.isButtonDisabled = true 方式修改data
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello vue!',
+            classNameObj: {
+                isName2: false,
+                isName3: true
+            },
+            ulList: [
+                'Javascript',
+                'React',
+                'Vue'
+            ],
+            isButtonDisabled: false,
+            str: 'Hello',
+            firstName: 'Foo',
+            lastName: 'Bar',
+            question: '',
+            answer: '你要先提出问题，我才能给你答案！',
+            ok: false,
+            type: 'a',
+            loginType: 'username',
+            numbers: [1, 2, 3, 4, 5]
+        },
+        watch: {
+            question: function (newQuestion, oldQuestion) {
+                this.answer = '等待输入停止……';
+                this.getAnswer();
+            }
+        },
+        computed: {
+            reversedStr: function () {
+                return this.str.split('').reverse().join('')
+            },
+            // fullName: function () {
+//                 return this.firstName + ' ' + this.lastName;
+//             }
+            fullName: {
+                get: function () {
+                    return this.firstName + ' ' + this.lastName;
+                },
+                set: function (newValue) {
+                    let names = newValue.split(' ');
+                    this.firstName = names[0];
+                    this.lastName = names[1];
+                }
+            },
+            evenNumbers: function () {
+                return this.numbers.filter(function (number) {
+                    return number % 2 === 0;
+                })
+            }
+        },
+        methods: {
+            addList: function () {
+                this.ulList.push('css');
+                this.message = 'aaa';
+                console.log(`hahah message is ${this.message}`)
+            },
+            // _.debounce 是由 lodash 提供的函数，
+            // 在运行特别消耗性能的操作时，
+            // 可以使用 _.debounce 来限制频率。
+            // 在下面这种场景中，我们需要限制访问 yesno.wtf/api 的频率，
+            // 等到用户输入完毕之后，ajax 请求才会发出。
+            // 想要了解更多关于 _.debounce 函数（以及与它类似的 _.throttle）的详细信息，
+            // 请访问：https://lodash.com/docs#debounce
+            getAnswer: _.debounce(
+                function () {
+                    if (this.question.indexOf('?') === -1) {
+                        this.answer = '问题通常需要包含一个英文问号。';
+                        return;
+                    }
+                    this.answer = '思考中……';
+                    var vm = this;
+                    axios.get('https://yesno.wtf/api').then(function (response) {
+                        vm.answer = _.capitalize(response.data.answer);
+                    }).cathch(function (error) {
+                        vm.answer = `错误！API 无法处理。${error}`;
+                    });
+                }, 500
+            ),
+            changeLoginType: function () {
+                this.loginType === 'username' ? this.loginType = 'email' : this.loginType = 'username'
+            }
+        }
+    })
+</script>
+</body>
+</html>
