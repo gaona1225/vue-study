@@ -10,7 +10,7 @@
 
 
 <body>
-<templete>
+<div>
     <div id="app">
         <p class="cName1" v-bind:class = "classNameObj">
         {{ message }}
@@ -21,6 +21,14 @@
             <li v-for = "(elem, index) of ulList">{{index}}：{{elem}}</li>
         </ul>
         <button @click = "addList" v-bind:disabled = "isButtonDisabled">addList</button>
+        <br/>
+        <button v-on:click = "show = !show">Toggle</button>
+        <transition name = "fade">
+            <p v-if = "show">Hello</p>
+        </transition>
+
+
+
         <p>初始数据str: {{str}}</p>
         <p>翻转后的数据str: {{reversedStr}}</p>
         <p>Hello {{fullName}}</p>
@@ -57,13 +65,33 @@
             <!--<span v-for = "n in 5" v-if = "n === 3">{{n}}</span>-->
             <span v-for = "n in 5">{{n}}</span>
         </div>
+        <div>
+            {{html|uppercase}}
+        </div>
 
         <template v-for = "m in 3">{{m}}</template>
 
+        <input
+          type="checkbox"
+          v-model="toggle"
+          true-value="yes"
+          false-value="no"
+        >
+
+        <input v-model.number="age" type="number">
+        <my-component></my-component>
     </div>
-</templete>
+</div>
 <script type="text/javascript">
     // var vm = new Vue({ // 如果要全局控制vue实例配置可以将vue实例赋给变量，然后通过 vm.isButtonDisabled = true 方式修改data
+    Vue.component('my-component', {
+        template: '<div>A custom component!</div>'
+    })
+    /*Vue.filter('uppercase', function (value) {
+        if (!value) return;
+        value = value.toString();
+        return value.charAt(0).toUpperCase() + value.slice(1);
+    });*/
     new Vue({
         el: '#app',
         data: {
@@ -77,6 +105,7 @@
                 'React',
                 'Vue'
             ],
+            show: false,
             isButtonDisabled: false,
             str: 'Hello',
             firstName: 'Foo',
@@ -86,12 +115,23 @@
             ok: false,
             type: 'a',
             loginType: 'username',
-            numbers: [1, 2, 3, 4, 5]
+            numbers: [1, 2, 3, 4, 5],
+            toggle: false,
+            age: 0,
+            html: 'acdfdsafasd'
+
         },
         watch: {
             question: function (newQuestion, oldQuestion) {
                 this.answer = '等待输入停止……';
                 this.getAnswer();
+            }
+        },
+        filters: {
+            uppercase: function (value) {
+                if (!value) return;
+                value = value.toString();
+                return value.charAt(0).toUpperCase() + value.slice(1);
             }
         },
         computed: {
@@ -151,5 +191,14 @@
         }
     })
 </script>
+
+<style scoped>
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0;
+    }
+</style>
 </body>
 </html>

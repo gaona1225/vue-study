@@ -1,6 +1,6 @@
 <template>
     <li>
-        {{title}}
+        {{id}}:{{title}}
         <button @click = "$emit('remove')">X</button>
     </li>
 </template>
@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'todoItem',
-  props: ['title'],
+  props: ['title', 'id'],
   components: {
   },
   data () {

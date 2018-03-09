@@ -9,9 +9,17 @@
                 v-for = "(todo, index) of todos"
                 v-bind:key = "todo.id"
                 v-bind:title = "todo.title"
+                v-bind:id = "todo.id"
                 v-on:remove = "todos.splice(index, 1)"
             ></todoItem>
         </ul>
+        <p @click = "count ++">{{count}}</p>
+        <input v-model = "message" placeholder="edit me">
+        <p>Message is: <span class = "pMsg">{{message}}</span></p>
+        <p>
+          <input type = "checkbox" id = "checkbox" v-model = "checked" >
+          <label for = "checkbox">{{checked}}</label>
+        </p>
     </div>
 </template>
 
@@ -30,7 +38,10 @@ export default {
         {id: 2, title: 'Take out the trash'},
         {id: 3, title: 'Mow the lawn'}
       ],
-      nextTodoId: 4
+      nextTodoId: 4,
+      count: 0,
+      message: '',
+      checked: false
     }
   },
   methods: {
@@ -48,5 +59,9 @@ export default {
 <style scoped>
     #todo-list-example {
         text-align: left;
+    }
+    .pMsg {
+      font-size: 28px;
+      color: red;
     }
 </style>
