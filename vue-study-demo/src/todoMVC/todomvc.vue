@@ -87,7 +87,7 @@ export default {
     components: {
 
     },
-    data() {
+    data () {
         return {
             todos: todoStorage.fetch(),
             newTodo: '',
@@ -133,7 +133,7 @@ export default {
                 return
             }
             this.todos.push({
-                id: todoStorage.uid ++,
+                id: todoStorage.uid++,
                 title: value,
                 completed: false
             })
@@ -142,11 +142,11 @@ export default {
         removeTodo: function (todo) {
             this.todos.splice(this.todos.indexOf(todo), 1)
         },
-        editTodo: function () {
+        editTodo: function (todo) {
             this.beforeEditCache = todo.title
             this.editedTodo = todo
         },
-        doneEdit: function () {
+        doneEdit: function (todo) {
             if (!this.editedTodo) {
                 return
             }

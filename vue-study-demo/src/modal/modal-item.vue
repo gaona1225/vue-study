@@ -3,7 +3,6 @@
         <div class = "modal-mask">
             <div class = "modal-wrapper">
                 <div class = "modal-container">
-                    
                     <div class = "modal-header">
                         <slot name = "header">
                             default header
@@ -34,18 +33,14 @@
 export default {
     name: 'modalItem',
     props: {
-
     },
-    data() {
+    data () {
         return {
-
         }
     },
     computed: {
-
     },
     methods: {
-
     }
 }
 </script>

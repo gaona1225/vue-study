@@ -26,33 +26,33 @@
 <script>
 import TodoItem from './todo-item'
 export default {
-  name: 'Todo',
-  components: {
-    TodoItem
-  },
-  data () {
-    return {
-      newTodoText: '',
-      todos: [
-        {id: 1, title: 'Do the dishes'},
-        {id: 2, title: 'Take out the trash'},
-        {id: 3, title: 'Mow the lawn'}
-      ],
-      nextTodoId: 4,
-      count: 0,
-      message: '',
-      checked: false
+    name: 'Todo',
+    components: {
+        TodoItem
+    },
+    data () {
+        return {
+            newTodoText: '',
+            todos: [
+                {id: 1, title: 'Do the dishes'},
+                {id: 2, title: 'Take out the trash'},
+                {id: 3, title: 'Mow the lawn'}
+            ],
+            nextTodoId: 4,
+            count: 0,
+            message: '',
+            checked: false
+        }
+    },
+    methods: {
+        addNewTodo: function () {
+            this.todos.push({
+                id: this.nextTodoId++,
+                title: this.newTodoText
+            })
+            this.newTodoText = ''
+        }
     }
-  },
-  methods: {
-    addNewTodo: function () {
-      this.todos.push({
-        id: this.nextTodoId++,
-        title: this.newTodoText
-      })
-      this.newTodoText = ''
-    }
-  }
 }
 </script>
 

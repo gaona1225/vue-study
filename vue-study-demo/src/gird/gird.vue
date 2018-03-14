@@ -18,7 +18,7 @@ export default {
     components: {
         gridItem
     },
-    data() {
+    data () {
         return {
             searchQuery: '',
             gridColumns: ['name', 'power'],

@@ -14,7 +14,7 @@ export default{
     components: {
         modalItem
     },
-    data() {
+    data () {
         return {
             showModal: false
         }

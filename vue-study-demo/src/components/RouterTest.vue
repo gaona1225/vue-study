@@ -4,13 +4,13 @@
 
 <script>
 export default {
-  name: 'RouterTest',
-  data () {
-    return {
+    name: 'RouterTest',
+    data () {
+        return {
+        }
+    },
+    methods: {
     }
-  },
-  methods: {
-  }
 }
 </script>
 

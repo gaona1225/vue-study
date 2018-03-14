@@ -14,56 +14,56 @@ import TodoMVC from '@/todoMVC/todomvc'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/demo',
-      name: 'Demo',
-      component: Demo
-    },
-    {
-      path: '/todo',
-      name: 'Todo',
-      component: Todo
-    },
-    {
-      path: '/markdown',
-      name: 'MarkDown',
-      component: MarkDown
-    },
-    {
-      path: '/gird',
-      name: 'Gird',
-      component: Gird
-    },
-    {
-      path: '/tree',
-      name: 'Tree',
-      component: Tree
-    },
-    {
-      path: '/svg',
-      name: 'SvgCom',
-      component: SvgCom
-    },
-    {
-      path: '/modal',
-      name: 'Modal',
-      component: Modal
-    },
-    {
-      path: '/todoMVC',
-      name: 'TodoMVC',
-      component: TodoMVC
-    },
-    {
-      path: '/router-test',
-      name: 'RouterTest',
-      component: RouterTest
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'HelloWorld',
+            component: HelloWorld
+        },
+        {
+            path: '/demo',
+            name: 'Demo',
+            component: Demo
+        },
+        {
+            path: '/todo',
+            name: 'Todo',
+            component: Todo
+        },
+        {
+            path: '/markdown',
+            name: 'MarkDown',
+            component: MarkDown
+        },
+        {
+            path: '/gird',
+            name: 'Gird',
+            component: Gird
+        },
+        {
+            path: '/tree',
+            name: 'Tree',
+            component: Tree
+        },
+        {
+            path: '/svg',
+            name: 'SvgCom',
+            component: SvgCom
+        },
+        {
+            path: '/modal',
+            name: 'Modal',
+            component: Modal
+        },
+        {
+            path: '/todoMVC',
+            name: 'TodoMVC',
+            component: TodoMVC
+        },
+        {
+            path: '/router-test',
+            name: 'RouterTest',
+            component: RouterTest
+        }
+    ]
 })

@@ -25,9 +25,8 @@ export default {
         model: Object
     },
     components: {
-        
     },
-    data() {
+    data () {
         return {
             open: false
         }
@@ -40,13 +39,13 @@ export default {
     methods: {
         toggle: function () {
             if (this.isFolder) {
-                this.open = !this.open;
+                this.open = !this.open
             }
         },
         changeType: function () {
             if (!this.isFolder) {
                 this.$set(this.model, 'children', [])
-                this.addChild();
+                this.addChild()
                 this.open = true
             }
         },

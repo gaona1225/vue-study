@@ -50,24 +50,24 @@
 import Modal from './Modal'
 import vueButton from './Button'
 export default {
-  name: 'Demo',
-  components: {
-    Modal,
-    vueButton
-  },
-  data () {
-    return {
-      isModalVisible: false
-    }
-  },
-  methods: {
-    showModal: function () {
-      this.isModalVisible = true
+    name: 'Demo',
+    components: {
+        Modal,
+        vueButton
     },
-    closeModal: function () {
-      this.isModalVisible = false
+    data () {
+        return {
+          isModalVisible: false
+        }
+    },
+    methods: {
+        showModal: function () {
+            this.isModalVisible = true
+        },
+        closeModal: function () {
+            this.isModalVisible = false
+        }
     }
-  }
 }
 </script>
 

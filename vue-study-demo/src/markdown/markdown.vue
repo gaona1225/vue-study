@@ -10,21 +10,14 @@ export default {
     components: {
 
     },
-    data() {
+    data () {
         return {
             input: '# hello'
         }
     },
     computed: {
-        compiledMarkdown: function () {
-
-        }
     },
     methods: {
     }
 }
 </script>
-
-<style type="text/css" scoped>
-    
-</style>

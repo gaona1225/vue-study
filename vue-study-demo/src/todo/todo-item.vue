@@ -7,15 +7,15 @@
 
 <script>
 export default {
-  name: 'todoItem',
-  props: ['title', 'id'],
-  components: {
-  },
-  data () {
-    return {
+    name: 'todoItem',
+    props: ['title', 'id'],
+    components: {
+    },
+    data () {
+        return {
+        }
+    },
+    methods: {
     }
-  },
-  methods: {
-  }
 }
 </script>

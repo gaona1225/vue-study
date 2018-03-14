@@ -27,18 +27,17 @@
 
 <script>
 export default {
-  name: 'Modal',
-  props: ['show'],
-  data () {
-    return {
-
+    name: 'Modal',
+    props: ['show'],
+    data () {
+        return {
+        }
+    },
+    methods: {
+        close: function () {
+            this.$emit('close')
+        }
     }
-  },
-  methods: {
-    close: function () {
-      this.$emit('close')
-    }
-  }
 }
 </script>
 

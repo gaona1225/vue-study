@@ -3,7 +3,7 @@
         <svg width = "200" height = "200">
             <polygraph :stats = "stats"></polygraph>
         </svg>
-        <div v-for = "stat in stats">
+        <div v-for = "(stat, key) in stats" :key = "key">
             <label>{{stat.label}}</label>
             <input type = "range" v-model = "stat.value" min = "0" max = "100">
             <span>{{stat.value}}</span>
@@ -32,7 +32,7 @@ export default {
     components: {
         polygraph
     },
-    data() {
+    data () {
         return {
             newLabel: '',
             stats: stats
@@ -45,13 +45,13 @@ export default {
         add: function (e) {
             e.preventDefault()
             if (!this.newLabel) {
-                return;
+                return
             }
             this.stats.push({
                 label: this.newLabel,
                 value: 100
             })
-            this.newLabel = '';
+            this.newLabel = ''
         },
         remove: function (stat) {
             if (this.stats.length > 3) {
