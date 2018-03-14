@@ -83,7 +83,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    // var vm = new Vue({ // 如果要全局控制vue实例配置可以将vue实例赋给变量，然后通过 vm.isButtonDisabled = true 方式修改data
+    
     Vue.component('my-component', {
         template: '<div>A custom component!</div>'
     })
@@ -92,7 +92,8 @@
         value = value.toString();
         return value.charAt(0).toUpperCase() + value.slice(1);
     });*/
-    new Vue({
+    var vm = new Vue({ // 如果要全局控制vue实例配置可以将vue实例赋给变量，然后通过 vm.isButtonDisabled = true 方式修改data
+    //new Vue({
         el: '#app',
         data: {
             message: 'Hello vue!',
@@ -118,7 +119,8 @@
             numbers: [1, 2, 3, 4, 5],
             toggle: false,
             age: 0,
-            html: 'acdfdsafasd'
+            html: 'acdfdsafasd',
+            a: 1
 
         },
         watch: {
@@ -155,6 +157,17 @@
                 return this.numbers.filter(function (number) {
                     return number % 2 === 0;
                 })
+            },
+            aDouble: function () {
+                return this.a * 2;
+            },
+            aPlus: {
+                get: function () {
+                    return this.a + 1
+                },
+                set: function (v) {
+                    this.a = v + 3
+                }
             }
         },
         methods: {
