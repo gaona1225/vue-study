@@ -31,19 +31,19 @@ export default {
     },
     computed: {
         computedType: function () {
-          return this.btnType ? `btn-${this.btnType}` : ''
+            return this.btnType ? `btn-${this.btnType}` : ''
         },
         computedSize: function () {
-          return this.btnSize ? `btn-${this.btnSize}` : ''
+            return this.btnSize ? `btn-${this.btnSize}` : ''
         },
         computedOutline: function () {
-          return this.btnOutline ? `btn-outline-${this.btnOutline}` : ''
+            return this.btnOutline ? `btn-outline-${this.btnOutline}` : ''
         },
         computedActive: function () {
-          return this.btnActive === 'true' ? 'active' : ''
+            return this.btnActive === 'true' ? 'active' : ''
         },
         computedBlock: function () {
-          return this.btnBlock === 'true' ? 'btn-block' : ''
+            return this.btnBlock === 'true' ? 'btn-block' : ''
         }
     },
     data () {

@@ -57,7 +57,7 @@ export default {
     },
     data () {
         return {
-          isModalVisible: false
+            isModalVisible: false
         }
     },
     methods: {

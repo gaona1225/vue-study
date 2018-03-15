@@ -12,32 +12,32 @@
 <script type="text/javascript">
 import treeItem from './tree-item'
 var data = {
-  name: 'My Tree',
-  children: [
-    { name: 'hello' },
-    { name: 'wat' },
-    {
-      name: 'child folder',
-      children: [
-        {
-          name: 'child folder',
-          children: [
-            { name: 'hello' },
-            { name: 'wat' }
-          ]
-        },
+    name: 'My Tree',
+    children: [
         { name: 'hello' },
         { name: 'wat' },
         {
-          name: 'child folder',
-          children: [
-            { name: 'hello' },
-            { name: 'wat' }
-          ]
+            name: 'child folder',
+            children: [
+                {
+                    name: 'child folder',
+                    children: [
+                        { name: 'hello' },
+                        { name: 'wat' }
+                    ]
+                },
+                { name: 'hello' },
+                { name: 'wat' },
+                {
+                    name: 'child folder',
+                    children: [
+                        { name: 'hello' },
+                        { name: 'wat' }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
 
 export default {
@@ -45,16 +45,14 @@ export default {
     components: {
         treeItem
     },
-    data() {
+    data () {
         return {
             treeData: data
         }
     },
     computed: {
-
     },
     methods: {
-
     }
 }
 </script>
