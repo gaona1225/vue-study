@@ -19,7 +19,7 @@
 
                         <div class = "view">
                             <input class = "toggle" type = "checkbox" v-model = "todo.completed">
-                            <label @dbclick = "editTodo(todo)">{{todo.title}}</label>
+                            <label @dblclick = "editTodo(todo)">{{todo.title}}</label>
                             <button class = "destroy" @click = "removeTodo(todo)"></button>
                         </div>
                         <input class = "edit" type = "text"
@@ -143,6 +143,9 @@ export default {
             this.todos.splice(this.todos.indexOf(todo), 1)
         },
         editTodo: function (todo) {
+            if (todo.completed) {
+                return
+            }
             this.beforeEditCache = todo.title
             this.editedTodo = todo
         },
