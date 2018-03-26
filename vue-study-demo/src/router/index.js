@@ -11,6 +11,7 @@ import SvgCom from '@/svg/svg'
 import Modal from '@/modal/modal'
 import TodoMVC from '@/todoMVC/todomvc'
 import Pagination from '@/pagination/Pagination'
+import STodo from '@/stodo/stodo'
 
 Vue.use(Router)
 
@@ -65,6 +66,11 @@ export default new Router({
             path: '/pagination',
             name: 'Pagination',
             component: Pagination
+        },
+        {
+            path: '/stodo',
+            name: 'STodo',
+            component: STodo
         },
         {
             path: '/router-test',
