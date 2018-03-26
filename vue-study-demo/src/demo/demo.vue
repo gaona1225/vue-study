@@ -11,9 +11,8 @@ export default {
     components: {
         demoItem
     },
-    data() {
-        return {
-            
+    data () {
+        return {  
         }
     },
     computed: {

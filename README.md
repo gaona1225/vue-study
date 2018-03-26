@@ -6,6 +6,8 @@ vue-cli study
 http://localhost:8080/#/
 
 http://localhost:8080/#/demo
+组件访问地址，查看router/index.js
+http://localhost:8080/#/pagination
 ```
 
 ### 运行程序 

@@ -10,6 +10,7 @@ import Tree from '@/tree/tree'
 import SvgCom from '@/svg/svg'
 import Modal from '@/modal/modal'
 import TodoMVC from '@/todoMVC/todomvc'
+import Pagination from '@/pagination/Pagination'
 
 Vue.use(Router)
 
@@ -59,6 +60,11 @@ export default new Router({
             path: '/todoMVC',
             name: 'TodoMVC',
             component: TodoMVC
+        },
+        {
+            path: '/pagination',
+            name: 'Pagination',
+            component: Pagination
         },
         {
             path: '/router-test',
