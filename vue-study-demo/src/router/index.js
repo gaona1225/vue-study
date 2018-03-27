@@ -12,6 +12,7 @@ import Modal from '@/modal/modal'
 import TodoMVC from '@/todoMVC/todomvc'
 import Pagination from '@/pagination/Pagination'
 import STodo from '@/stodo/stodo'
+import VuexTodo from '@/vuexTodo/vuexTodo'
 
 Vue.use(Router)
 
@@ -71,6 +72,11 @@ export default new Router({
             path: '/stodo',
             name: 'STodo',
             component: STodo
+        },
+        {
+            path: '/vuexTodo',
+            name: 'VuexTodo',
+            component: VuexTodo
         },
         {
             path: '/router-test',

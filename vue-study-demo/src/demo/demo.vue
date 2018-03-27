@@ -12,7 +12,7 @@ export default {
         demoItem
     },
     data () {
-        return {  
+        return {
         }
     },
     computed: {
@@ -23,5 +23,4 @@ export default {
 </script>
 
 <style type="text/css">
-    
 </style>
