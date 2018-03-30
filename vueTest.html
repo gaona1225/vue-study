@@ -96,6 +96,7 @@
                 {{ entry.title }}
             </li>
         </ul>
+        <p>{{ price | toFixed(2) | toUSD }}</p>
     </div>
 </div>
 <script type="text/javascript">
@@ -141,7 +142,8 @@
             entries: [
                 {id: 1, title: 'Uno'},
                 {id: 2, title: 'Due'}
-            ]
+            ],
+            price: 435.2345
         },
         mounted () {
             console.log(this.$refs.entry2)
@@ -159,6 +161,15 @@
                 if (!value) return;
                 value = value.toString();
                 return value.charAt(0).toUpperCase() + value.slice(1);
+            },
+            toFixed: function (price, limit) {
+                console.log('toFixed')
+                return price.toFixed(limit)
+            },
+            toUSD: function (price) {
+                console.log('toUSD')
+                return `$${price}`
+                // return price + 2
             }
         },
         computed: {

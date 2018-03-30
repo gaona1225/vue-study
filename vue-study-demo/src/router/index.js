@@ -14,6 +14,8 @@ import Pagination from '@/pagination/Pagination'
 import STodo from '@/stodo/stodo'
 import VuexTodo from '@/vuexTodo/vuexTodo'
 import Calculator from '@/calculator/calculator'
+import Searching from '@/searching/searching'
+import StudentScore from '@/studentScore/studentScore'
 
 Vue.use(Router)
 
@@ -83,6 +85,16 @@ export default new Router({
             path: '/calculator',
             name: 'Calculator',
             component: Calculator
+        },
+        {
+            path: '/searching',
+            name: 'Searching',
+            component: Searching
+        },
+        {
+            path: '/studentScore',
+            name: StudentScore,
+            component: StudentScore
         },
         {
             path: '/router-test',

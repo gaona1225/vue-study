@@ -93,7 +93,6 @@ export default {
             // 计算器按钮的click事件
             let me = this
             let key = event.target.textContent
-            console.log(key)
             if (
                 key !== '=' &&
                 key !== 'C' &&
