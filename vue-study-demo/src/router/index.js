@@ -13,6 +13,7 @@ import TodoMVC from '@/todoMVC/todomvc'
 import Pagination from '@/pagination/Pagination'
 import STodo from '@/stodo/stodo'
 import VuexTodo from '@/vuexTodo/vuexTodo'
+import Calculator from '@/calculator/calculator'
 
 Vue.use(Router)
 
@@ -77,6 +78,11 @@ export default new Router({
             path: '/vuexTodo',
             name: 'VuexTodo',
             component: VuexTodo
+        },
+        {
+            path: '/calculator',
+            name: 'Calculator',
+            component: Calculator
         },
         {
             path: '/router-test',

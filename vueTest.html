@@ -12,10 +12,16 @@
 <body>
 <div>
     <div id="app">
-        <p class="cName1" v-bind:class = "classNameObj">
+        <p class="cName1" v-bind:class = "classNameObj" v-once>
         {{ message }}
         </p>
-        <input type = "text" v-model="message"/>
+        <p class="cName1" v-bind:class = "classNameObj" v-text = "message">
+        </p>
+        <p v-html = "msgHtml"></p>
+        <ul>
+            <li v-for = "(item, key, index) of classNameObj">{{index}}:{{key}}:{{item}}</li>
+        </ul>
+        <input type = "text" v-model.trim="message"/>
         <ul>
             <!--<li v-for = "elem in ulList">{{elem}}</li>-->
             <li v-for = "(elem, index) of ulList">{{index}}：{{elem}}</li>
@@ -26,7 +32,6 @@
         <transition name = "fade">
             <p v-if = "show">Hello</p>
         </transition>
-
 
 
         <p>初始数据str: {{str}}</p>
@@ -80,6 +85,17 @@
 
         <input v-model.number="age" type="number">
         <my-component></my-component>
+
+        <p ref = 'ggP'>11</p>
+
+        <ul>
+            <li class = "liList"
+                v-for = "entry in entries"
+                :key = "entry.id"
+                :ref = `entry${entry.id}`>
+                {{ entry.title }}
+            </li>
+        </ul>
     </div>
 </div>
 <script type="text/javascript">
@@ -120,8 +136,17 @@
             toggle: false,
             age: 0,
             html: 'acdfdsafasd',
-            a: 1
-
+            a: 1,
+            msgHtml: '<span style="color:red">span</span>',
+            entries: [
+                {id: 1, title: 'Uno'},
+                {id: 2, title: 'Due'}
+            ]
+        },
+        mounted () {
+            console.log(this.$refs.entry2)
+            console.log(this.$refs.ggP.innerText)
+            this.$refs.ggP.innerText = 'ggTTT'
         },
         watch: {
             question: function (newQuestion, oldQuestion) {
