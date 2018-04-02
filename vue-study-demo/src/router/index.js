@@ -16,6 +16,8 @@ import VuexTodo from '@/vuexTodo/vuexTodo'
 import Calculator from '@/calculator/calculator'
 import Searching from '@/searching/searching'
 import StudentScore from '@/studentScore/studentScore'
+import Scrolling from '@/scrolling/scrolling'
+import Switchbutton from '@/switchbutton/switchbutton'
 
 Vue.use(Router)
 
@@ -95,6 +97,16 @@ export default new Router({
             path: '/studentScore',
             name: StudentScore,
             component: StudentScore
+        },
+        {
+            path: '/scrolling',
+            name: Scrolling,
+            component: Scrolling
+        },
+        {
+            path: '/switchbutton',
+            name: Switchbutton,
+            component: Switchbutton
         },
         {
             path: '/router-test',
