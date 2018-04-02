@@ -18,6 +18,8 @@ import Searching from '@/searching/searching'
 import StudentScore from '@/studentScore/studentScore'
 import Scrolling from '@/scrolling/scrolling'
 import Switchbutton from '@/switchbutton/switchbutton'
+import ProgressRing from '@/progressRing/progressRing'
+import Cnotch from '@/cnotch/cnotch'
 
 Vue.use(Router)
 
@@ -107,6 +109,16 @@ export default new Router({
             path: '/switchbutton',
             name: Switchbutton,
             component: Switchbutton
+        },
+        {
+            path: '/progressRing',
+            name: ProgressRing,
+            component: ProgressRing
+        },
+        {
+            path: '/cnotch',
+            name: Cnotch,
+            component: Cnotch
         },
         {
             path: '/router-test',

@@ -6,29 +6,29 @@
 
 <script type="text/javascript">
 export default {
-  name: 'switchbuttonItem',
-  props: ['result'],
-  components: {
-  },
-  data () {
-      return {
-          myResult: this.result
-      }
-  },
-  computed: {
-  },
-  methods: {
-      change: function () {
-          this.myResult = !this.myResult
-      }
-  },
-  watch: {
-      result: function (val) {
-          this.myResult = val
-      },
-      myResult: function (val) {
-          this.$emit('update:my-result', val)
-      }
-  }
+    name: 'switchbuttonItem',
+    props: ['result'],
+    components: {
+    },
+    data () {
+        return {
+            myResult: this.result
+        }
+    },
+    computed: {
+    },
+    methods: {
+        change: function () {
+            this.myResult = !this.myResult
+        }
+    },
+    watch: {
+        result: function (val) {
+            this.myResult = val
+        },
+        myResult: function (val) {
+            this.$emit('update:my-result', val)
+        }
+    }
 }
 </script>
