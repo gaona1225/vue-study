@@ -20,6 +20,7 @@ import Scrolling from '@/scrolling/scrolling'
 import Switchbutton from '@/switchbutton/switchbutton'
 import ProgressRing from '@/progressRing/progressRing'
 import Cnotch from '@/cnotch/cnotch'
+import Tags from '@/tags/tags'
 
 Vue.use(Router)
 
@@ -119,6 +120,11 @@ export default new Router({
             path: '/cnotch',
             name: Cnotch,
             component: Cnotch
+        },
+        {
+            path: '/tags',
+            name: Tags,
+            component: Tags
         },
         {
             path: '/router-test',
