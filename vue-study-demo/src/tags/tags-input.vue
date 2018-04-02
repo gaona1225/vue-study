@@ -1,13 +1,3 @@
-<template>
-    <div class = "tags-input">
-        <span v-for = "(tag, index) in value" :key = "index" class = "tags-input-tag">
-            <span>{{ tag }}</span>
-            <button type = "button" class = "tags-input-remove" @click = "removeTag(tag)">&times;</button>
-        </span>
-        <input class = "tags-input-text" placeholder="Add tag..." @keydown.enter.prevent = "addTag" v-model = "newTag">
-    </div>
-</template>
-
 <script type="text/javascript">
 export default {
     name: 'tagsInput',
@@ -30,8 +20,26 @@ export default {
             this.newTag = ''
         },
         removeTag (tag) {
+            console.log('removeTag')
             this.$emit('input', this.value.filter(t => t !== tag))
         }
+    },
+    render () {
+        return this.$scopedSlots.default({
+            tags: this.value,
+            addTag: this.addTag,
+            removeTag: this.removeTag,
+            inputAttrs: { value: this.newTag },
+            inputEvents: {
+                input: (e) => { this.newTag = e.target.value },
+                keydown: (e) => {
+                    if (e.keyCode === 13) {
+                        e.preventDefault()
+                        this.addTag()
+                    }
+                }
+            }
+        })
     }
 }
 </script>
